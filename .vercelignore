@@ -1,0 +1,32 @@
+# Vercel ignore file - exclude local dev, editor, CI, and secrets from deployments
+
+# Editor / OS
+.vscode
+.idea
+.DS_Store
+
+# Dependencies / build
+node_modules
+coverage
+dist
+build
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# VCS / CI
+.git
+.gitignore
+.github
+.gitlab
+.travis.yml
+
+# Tests & logs
+tests
+__tests__
+*.log
+
+# Misc
+husky
