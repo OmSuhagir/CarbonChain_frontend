@@ -6,11 +6,14 @@ import axios from 'axios';
  */
 
 // Base API URL - works with both local dev and Vercel production
-const API_BASE_URL = 
-  import.meta.env.VITE_API_BASE_URL || 
-  (typeof window !== 'undefined' && window.location.hostname === 'localhost' 
-    ? 'http://localhost:5000/api' 
-    : '/api');
+// const API_BASE_URL = 
+//   import.meta.env.VITE_API_BASE_URL || 
+//   (typeof window !== 'undefined' && window.location.hostname === 'localhost' 
+//     ? 'http://localhost:5000/api' 
+//     : '/api');
+
+    const API_BASE_URL = 
+  process.env.VITE_API_BASE_URL
 
 // Create axios instance with default config
 const apiClient = axios.create({
