@@ -21,6 +21,11 @@ import ForecastTrend from './ForecastTrend';
 import GeminiOptimizationPanel from './GeminiOptimizationPanel';
 import { formatEmission, getAlignmentColor } from '../utils/formatting';
 import OptimizationPanel from './OptimizationPanel';
+import EmissionsIcon from '../assets/emissions.svg';
+import WarningIcon from '../assets/warning.svg';
+import CarbonIcon from '../assets/carbon.svg';
+import CostIcon from '../assets/cost.svg';
+import TargetIcon from '../assets/target.svg';
 
 export function Dashboard({ 
   product = null, 
@@ -133,13 +138,13 @@ export function Dashboard({
                 title="Total Emissions"
                 value={dashboardData.totalEmission || 0}
                 unit="tCO2e"
-                icon="🌍"
+                icon={EmissionsIcon}
               />
 
               <SummaryCard
                 title="Highest Emission Stage"
                 value={dashboardData.highestEmissionStage || 'N/A'}
-                icon="⚠"
+                icon={WarningIcon}
                 isHighestEmission={true}
               />
 
@@ -147,21 +152,21 @@ export function Dashboard({
                 title="Carbon Efficiency"
                 value={dashboardData.carbonEfficiencyScore || "72"}
                 unit="/100"
-                icon="🌱"
+                icon={CarbonIcon}
               />
 
               <SummaryCard
                 title="Cost Efficiency"
                 value={dashboardData.costEfficiencyScore || 85}
                 unit="/100"
-                icon="💰"
+                icon={CostIcon}
               />
 
               <SummaryCard
                 title="Net-Zero Alignment"
                 value={dashboardData.netZeroAlignmentPercentage || 0}
                 unit="%"
-                icon="🎯"
+                icon={TargetIcon}
                 isAlignment={true}
               />
             </div>

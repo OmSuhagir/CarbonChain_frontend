@@ -32,7 +32,16 @@ export function SummaryCard({
     <div className={`${cardClass} ${glowClass} animate-fade-in`}>
       <div className="flex items-start justify-between mb-4">
         <h3 className={titleClass}>{title}</h3>
-        <span className="text-3xl">{icon}</span>
+        {typeof icon === 'string' && !icon.includes('/') ? (
+          <span className="text-3xl">{icon}</span>
+        ) : (
+          <img 
+            src={icon} 
+            alt={title}
+            className="w-8 h-8 text-accent-emerald stroke-accent-emerald"
+            style={{ filter: 'invert(1)' }}
+          />
+        )}
       </div>
       
       <div className="flex items-baseline gap-2">
